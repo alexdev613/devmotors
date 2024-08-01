@@ -17,3 +17,51 @@
 .background {
   background-color: #FFF;
 }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 14px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.contentLogo {
+  display: none;
+}
+
+.contentLogo a {
+  font-weight: bold;
+  color: #121212;
+  font-size: 30px;
+}
+
+.nav {
+  display: flex;
+  gap: 14px;
+
+  a {
+    font-weight: medium;
+    color: #121212;
+    display: flex;
+    align-items: center;
+    padding: 8px 4px;
+    transition: all 0.7s;
+  }
+
+  a:hover {
+    font-weight: bold;
+    transform: scale(1.09);
+  }
+}
+
+@media (min-width: 640px) {
+  .contentLogo {
+    display: flex;
+  }
+}
