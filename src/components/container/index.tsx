@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 
 export function Container ({ children }: { children: ReactNode }) {
   return (
-    <div>
+    <div className={styles.container}>
       {children}
     </div>
   )
