@@ -1,0 +1,138 @@
+.containerAbout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 34px 0;
+  padding-top: 54px;
+}
+
+.innerAbout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+
+  p {
+    line-height: 150%;
+  }
+}
+
+.containerAbout {
+  .title {
+    font-size: 34px;
+    color: #121212;
+  }
+}
+
+.bannerAbout {
+  position: relative;
+  width: 300px;
+  height: 350px;
+}
+
+.imageAbout {
+  object-fit: cover;
+  width: 300px;
+  height: 350px;
+  border-radius: 8px;
+}
+
+@media (min-width: 640px) {
+  .containerAbout {
+    flex-direction: row;
+    gap: 34px;
+
+    .title {
+      align-self: flex-start;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .innerAbout {
+    p {
+      align-self: flex-start;
+      max-width: 80%;
+    }
+  }
+  
+  .bannerAbout {
+    width: 600px;
+    height: 450px;
+  }
+}
+
+// SERVICE AREA
+
+.servicesTitle {
+  text-transform: uppercase;
+  color: #121212;
+  margin: 40px 0 24px 0;
+  text-align: center;
+  font-size: 24px;
+}
+
+.services {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+
+.service p {
+  text-align: center;
+  margin: 8px 0;
+  font-size: 18px;
+  transition: all 0.4s;
+}
+
+.innerService {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden; // para a imagem não extravazar quando ela aumenta com scale no hover que criamos a baixo
+  border-radius: 8px;
+}
+
+.imageService {
+  object-fit: cover;
+  border-radius: 8px;
+  width: 280px;
+  height: 350px;
+  transition: all 0.4s;
+}
+
+.innerService:hover {
+  .imageService {
+    transform: scale(1.2);
+  }
+
+  + p {
+    font-weight: bold;
+  }
+}
+
+// RESPONSIVIDADE
+
+@media (min-width: 640px) {
+  .services {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .innerService {
+    width: 280px;
+    height: 200px;
+  }
+
+  .servicesTitle {
+    margin-top: 54px;
+    font-size: 30;
+  }
+}
