@@ -5,10 +5,11 @@ import { Hero } from '@/components/hero';
 import { Phone } from 'lucide-react';
 import { Services } from "@/components/home/services";
 import { Container } from '@/components/container';
+import { Footer } from '@/components/home/footer';
 
 export default async function Home() {
   const { object }: HomeProps = await getDataHome();
-  console.log(object.title);
+  console.log(object);
 
   return (
     <main>
@@ -24,6 +25,8 @@ export default async function Home() {
       <Container>
         <Services object={object} />
       </Container>
+
+      <Footer object={object} />
     </main>
   );
 }
