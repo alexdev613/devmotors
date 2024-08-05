@@ -2,10 +2,15 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './styles.module.scss';
-
 import { X, Menu } from 'lucide-react'; 
 
-export function Submenu() {
+import { MenuProps } from '@/utils/menu.type';
+
+interface SubMenuProp {
+  menu: MenuProps;
+}
+
+export function Submenu({ menu }: SubMenuProp) {
   
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,16 +46,13 @@ export function Submenu() {
           </button>
         )}
 
-        <li>
-          <Link href="/post/pagina-1">
-            Página 1
-          </Link>
-        </li>
-        <li>
-          <Link href="/post/pagina-2">
-            Página 2
-          </Link>
-        </li>
+        {menu.objects.map( (item, index) => (
+          <li key={index}>
+            <Link href={`/post/${item.slug}`}>
+              {item.title}
+            </Link>
+          </li>
+        ))}
       </ul>
     </section>
   )
