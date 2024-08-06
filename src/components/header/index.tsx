@@ -9,7 +9,7 @@ export function Header() {
 
   function scrollHandler() {
     window.scrollY > 10 ? setTop(false) : setTop(true);
-    console.log("FEZ SCROLL");
+    // console.log("FEZ SCROLL");
   }
 
   useEffect( () => {
