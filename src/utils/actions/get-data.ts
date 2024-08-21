@@ -1,5 +1,10 @@
 // import { redirect } from "next/navigation";
 
+// função para simular um delay:
+function delay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 export async function getDataHome() {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/objects/66abddd3d70e5c5cd3fa6317?read_key=${process.env.READ_KEY}&depth=1&props=slug,title,metadata,`, { next: { revalidate: 120 }},);
@@ -45,6 +50,9 @@ export async function getItemBySlug(itemSlug: string) {
   const url = `${baseUrl}?${queryParams.toString()}`;
 
   try {
+
+    await delay(4000);
+
     const res = await fetch(url, { next: { revalidate: 120 } });
 
     if (!res.ok) {
